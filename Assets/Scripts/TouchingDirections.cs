@@ -1,0 +1,82 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TouchingDirections : MonoBehaviour
+{
+    //castFilter checks if player is on the ground
+    public ContactFilter2D castFilter;
+    public float groundDistance = 0.05f;
+    public float wallDistance = 0.2f;
+    public float ceilingDistance = 0.05f;
+
+    CapsuleCollider2D coll;
+    Animator anim;
+
+    [SerializeField] private LayerMask jumpableGround;
+
+    RaycastHit2D[] groundHits = new RaycastHit2D[5];
+    RaycastHit2D[] wallHits = new RaycastHit2D[5];
+    RaycastHit2D[] ceilingHits = new RaycastHit2D[5];
+
+    [SerializeField] private bool _isGrounded;
+    public bool IsGrounded
+    {
+        get
+        {
+            return _isGrounded;
+        }
+        private set
+        {
+            _isGrounded = value;
+            anim.SetBool("IsGrounded", value);
+        }
+    }
+
+    [SerializeField] private bool _isOnWall;
+    public bool IsOnWall
+    {
+        get
+        {
+            return _isOnWall;
+        }
+        private set
+        {
+            _isGrounded = value;
+            anim.SetBool("IsOnWall", value);
+        }
+    }
+
+    [SerializeField] private bool _isOnCeiling;
+
+    private Vector2 wallDirection => gameObject.transform.localScale.x > 0 ? Vector2.right : Vector2.left;
+
+    public bool IsOnCeiling
+    {
+        get
+        {
+            return _isOnCeiling;
+        }
+        private set
+        {
+            _isGrounded = value;
+            anim.SetBool("IsOnCeiling", value);
+        }
+    }
+
+    // Start is called before the first frame update
+    private void Awake()
+    {
+        coll = GetComponent<CapsuleCollider2D>();
+        anim = GetComponent<Animator>();
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        //method of checking whether player is on the ground using Cast.
+        IsGrounded = coll.Cast(Vector2.down, castFilter, groundHits, groundDistance) > 0;
+        IsOnWall = coll.Cast(wallDirection, castFilter, wallHits, wallDistance) > 0;
+        IsOnCeiling = coll.Cast(Vector2.up, castFilter, ceilingHits, ceilingDistance) > 0;
+    }
+}
