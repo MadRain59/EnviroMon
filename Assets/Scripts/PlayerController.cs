@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody2D rb;
-    TouchingDirections grounded;
+    TouchingDirections touchingDirections;
     [SerializeField] private float walkSpeed = 5f;
     [SerializeField] private float airWalkSpeed = 5f;
     [SerializeField] private float runSpeed = 10f;
@@ -25,9 +25,9 @@ public class PlayerController : MonoBehaviour
         {
             if (CanMove)
             {
-                if (IsMoving && !grounded.IsOnWall)
+                if (IsMoving && !touchingDirections.IsOnWall)
                 {
-                    if (grounded.IsGrounded)
+                    if (touchingDirections.IsGrounded)
                     {
                         if (IsRunning)
                         {
@@ -127,15 +127,8 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        grounded = GetComponent<TouchingDirections>();
+        touchingDirections = GetComponent<TouchingDirections>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void FixedUpdate()
     {
         //tells rb the x and y position of the character, x is multiplied by the walk speed
@@ -182,7 +175,7 @@ public class PlayerController : MonoBehaviour
     {
         //Check if alive as well
         // && grounded.IsGrounded && CanMove put this in later, can't use because bugged
-        if (context.started)
+        if (context.started && touchingDirections.IsGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
             anim.SetTrigger("IsJumping");

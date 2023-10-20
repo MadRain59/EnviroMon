@@ -1099,7 +1099,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -59.87, y: -3.64, z: -10}
+  m_LocalPosition: {x: -62.46, y: -3.48, z: -10}
   m_LocalScale: {x: 1.822, y: 1.935875, z: 1.822}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1799,7 +1799,7 @@ Transform:
   m_GameObject: {fileID: 1120790431}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -59.87, y: -3.64, z: -10}
+  m_LocalPosition: {x: -62.46, y: -3.48, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2662,7 +2662,7 @@ Transform:
   m_GameObject: {fileID: 1584631170}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -59.87, y: -3.64, z: 0}
+  m_LocalPosition: {x: -62.46, y: -3.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2750,13 +2750,10 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  groundDistance: 0.05
+  groundDistance: 0.5
   wallDistance: 0.2
-  ceilingDistance: 0.05
-  jumpableGround:
-    serializedVersion: 2
-    m_Bits: 64
-  _isGrounded: 0
+  ceilingDistance: 0.5
+  _isGrounded: 1
   _isOnWall: 0
   _isOnCeiling: 0
 --- !u!1 &1607403677
@@ -3630,7 +3627,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
+  - {fileID: 1099884819}
   - {fileID: 816833125}
   - {fileID: 1584631175}
   - {fileID: 1120790434}
-  - {fileID: 1099884819}

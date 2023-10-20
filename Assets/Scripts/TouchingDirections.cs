@@ -13,13 +13,12 @@ public class TouchingDirections : MonoBehaviour
     CapsuleCollider2D coll;
     Animator anim;
 
-    [SerializeField] private LayerMask jumpableGround;
-
     RaycastHit2D[] groundHits = new RaycastHit2D[5];
     RaycastHit2D[] wallHits = new RaycastHit2D[5];
     RaycastHit2D[] ceilingHits = new RaycastHit2D[5];
 
     [SerializeField] private bool _isGrounded;
+    
     public bool IsGrounded
     {
         get
@@ -42,7 +41,7 @@ public class TouchingDirections : MonoBehaviour
         }
         private set
         {
-            _isGrounded = value;
+            _isOnWall = value;
             anim.SetBool("IsOnWall", value);
         }
     }
@@ -59,7 +58,7 @@ public class TouchingDirections : MonoBehaviour
         }
         private set
         {
-            _isGrounded = value;
+            _isOnCeiling = value;
             anim.SetBool("IsOnCeiling", value);
         }
     }
