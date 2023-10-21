@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 //[RequiredComponent(typeof(Rigidbody2D) for calling RigidBody2D, can be used but unnecessary
-[RequireComponent(typeof(TouchingDirections))]
+[RequireComponent(typeof(TouchingDirections), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
     private Animator anim;
@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float airWalkSpeed = 5f;
     [SerializeField] private float runSpeed = 10f;
     public float jumpImpulse = 10f;
+    Damageable damageable;
+
     //calls Vector2
     Vector2 moveInput;
 
@@ -113,13 +115,21 @@ public class PlayerController : MonoBehaviour
             _isFacingRight = value;
         }
     }
-
+    //gets reference for CanMove from the animator
     public bool CanMove 
     {
         get
         {
             return anim.GetBool("canMove");
         }
+    }
+    //gets reference for IsAlive from the animator
+    public bool IsAlive 
+    { 
+        get
+        {
+            return anim.GetBool("IsAlive");
+        } 
     }
 
     // Start is called before the first frame update
@@ -128,9 +138,11 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingDirections>();
+        damageable = GetComponent<Damageable>();
     }
     private void FixedUpdate()
     {
+        if(!damageable.IsHit)
         //tells rb the x and y position of the character, x is multiplied by the walk speed
         //y whill most likely be multiplied by the jumforce
         rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
@@ -142,10 +154,20 @@ public class PlayerController : MonoBehaviour
     {
         //moveInput is equal to the current value of Vector2
         moveInput = context.ReadValue<Vector2>();
-        //decides whether IsMoving is true or false
-        IsMoving = moveInput != Vector2.zero;
 
-        SetFacingDirection(moveInput);
+        //checks if player IsAlive first before deciding whether or not player can move
+        if(IsAlive)
+        { 
+            //decides whether IsMoving is true or false
+            IsMoving = moveInput != Vector2.zero;
+
+            SetFacingDirection(moveInput);
+        }
+        else
+        {
+            IsMoving = false;
+        }
+
     }
 
     public void SetFacingDirection(Vector2 moveInput)
@@ -175,7 +197,7 @@ public class PlayerController : MonoBehaviour
     {
         //Check if alive as well
         // && grounded.IsGrounded && CanMove put this in later, can't use because bugged
-        if (context.started && touchingDirections.IsGrounded)
+        if (context.started && touchingDirections.IsGrounded && IsAlive)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
             anim.SetTrigger("IsJumping");
@@ -188,5 +210,10 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetTrigger("attack");
         }
+    }
+
+    public void OnHit(int damage, Vector2 knockback)
+    {
+        rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
     }
 }
