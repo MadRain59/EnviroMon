@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bc151027b50104c86885339bedc061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5
+  walkSpeed: 2.92
   walkStopRate: 0.02
   attackZone: {fileID: 1742238252}
   cliffDetectionZone: {fileID: 934039107}
@@ -584,8 +584,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.136549, y: -0.0021032095}
-  m_Size: {x: 1.1229057, y: 2.3078544}
+  m_Offset: {x: -0.026832553, y: -0.8432981}
+  m_Size: {x: 1.506912, y: 3.2697134}
   m_Direction: 0
 --- !u!50 &276046737
 Rigidbody2D:
@@ -655,9 +655,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 861660197, guid: 13f6e524ba5b86641a5d20d65090a313, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e7f28ca36669f4545b683b07c88a1ea3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 7.5, y: 5}
@@ -675,8 +675,8 @@ Transform:
   m_GameObject: {fileID: 276046732}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -58.89, y: -3.81, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -60.3162, y: -3.6269, z: 0}
+  m_LocalScale: {x: 0.59950167, y: 0.5980873, z: 0.6476109}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1742238250}
@@ -1356,7 +1356,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -64.98, y: 1.14, z: -10}
+  m_LocalPosition: {x: -65.8222, y: 1.3589, z: -10}
   m_LocalScale: {x: 1.822, y: 1.935875, z: 1.822}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2162,7 +2162,7 @@ Transform:
   m_GameObject: {fileID: 1120790431}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -64.98, y: 1.14, z: -10}
+  m_LocalPosition: {x: -65.8222, y: 1.3589, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2344,15 +2344,22 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.058944702, y: 0.9958916}
-      - {x: -0.5628806, y: 1.1742442}
-      - {x: -1.1436934, y: 0.9026576}
-      - {x: -0.41082, y: 0.5666326}
-      - {x: -0.26707077, y: -0.21432817}
-      - {x: -0.92806244, y: -0.77436316}
-      - {x: 0.020490289, y: -0.7046573}
-      - {x: 0.35494614, y: -0.3950315}
-      - {x: 0.48801708, y: 0.3465765}
+    - - {x: 1.8646983, y: 0.529948}
+      - {x: 1.2038003, y: 1.1264011}
+      - {x: 0.4275282, y: 1.4264358}
+      - {x: -0.450279, y: 0.4676262}
+      - {x: 0.18903057, y: 0.24026902}
+      - {x: 0.6818251, y: -0.34693354}
+      - {x: 0.6208941, y: -0.9366238}
+      - {x: -0.14099349, y: -1.4106649}
+      - {x: -1.3888657, y: -1.5131783}
+      - {x: -2.9242475, y: -1.0571338}
+      - {x: -1.5587329, y: -1.8322694}
+      - {x: -0.105587006, y: -1.8792424}
+      - {x: 1.1954473, y: -1.6566229}
+      - {x: 1.939281, y: -1.0133822}
+      - {x: 2.048904, y: -0.55230933}
+      - {x: 2.050859, y: -0.013202608}
   m_UseDelaunayMesh: 0
 --- !u!1 &1273500844
 GameObject:
@@ -2851,16 +2858,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.4920921, y: 0.27239656}
-      - {x: 2.0291939, y: 0.9653883}
-      - {x: 1.2952881, y: 1.3219683}
-      - {x: -0.22920227, y: 1.3207798}
-      - {x: -1.134963, y: 1.008327}
-      - {x: 0.24924326, y: 1.0568348}
-      - {x: 1.0872574, y: 0.2553575}
-      - {x: 0.8327751, y: -0.52552557}
-      - {x: 2.29981, y: -0.94770503}
-      - {x: 2.5873442, y: -0.4463194}
+    - - {x: 1.888414, y: 0.33094266}
+      - {x: 1.6267396, y: 1.0239348}
+      - {x: 1.0365646, y: 1.8196123}
+      - {x: -0.114215374, y: 2.5502536}
+      - {x: -1.4224303, y: 2.589079}
+      - {x: 0.04801905, y: 1.9057577}
+      - {x: 0.65605944, y: 0.2553575}
+      - {x: 0.25784063, y: -1.4037213}
+      - {x: 1.3799146, y: -2.323546}
+      - {x: 1.8974229, y: -1.0903296}
   m_UseDelaunayMesh: 0
 --- !u!114 &1541841155
 MonoBehaviour:
@@ -3209,7 +3216,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 74446b65487948949b9acb27764fca2d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 394bf4d394ce87243a9095d98f418b32, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3229,8 +3236,8 @@ Transform:
   m_GameObject: {fileID: 1584631170}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -64.98, y: 1.14, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -65.8222, y: 1.3589, z: 0}
+  m_LocalScale: {x: 0.7006101, y: 0.630453, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1261004136}
@@ -3289,8 +3296,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.022731781, y: -0.203112}
-  m_Size: {x: 0.75211334, y: 1.7920077}
+  m_Offset: {x: 0.009067638, y: -0.6969125}
+  m_Size: {x: 1.0065185, y: 3.042969}
   m_Direction: 0
 --- !u!114 &1584631178
 MonoBehaviour:
@@ -3505,7 +3512,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.47896004, y: -0.1258552}
+  m_Offset: {x: 0.47896004, y: -0.75672245}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3516,7 +3523,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.5101357, y: 2.0907454}
+  m_Size: {x: 3.5101357, y: 3.35248}
   m_EdgeRadius: 0
 --- !u!114 &1742238252
 MonoBehaviour:
