@@ -108,6 +108,8 @@ public class Damageable : MonoBehaviour
             //? is to check whether or not damageableHit event is null or not and returns
             IsHit = true;
             damageableHit?.Invoke(damage, knockback);
+            //Calls upon CharacterEvents.characterDamaged and Invokes it and shows the value of damage on the gameObject
+            CharacterEvents.characterDamaged.Invoke(gameObject, damage);
 
             return true;
         }
