@@ -6,6 +6,7 @@ using UnityEngine;
 public class HealthPickup : MonoBehaviour
 {
     public int healthRestore = 25;
+    public Vector3 spinRotationSpeed = new Vector3 (0, 180, 0);
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,11 @@ public class HealthPickup : MonoBehaviour
             damageable.Heal(healthRestore);
             Destroy(gameObject);
         }
+    }
+
+    private void Update()
+    {
+        transform.eulerAngles += spinRotationSpeed * Time.deltaTime;
     }
 
 
