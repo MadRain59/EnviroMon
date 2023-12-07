@@ -115,4 +115,14 @@ public class Damageable : MonoBehaviour
         }
         return false;
     }
+
+    public void Heal(int healthRestore)
+    {
+        if(IsAlive && Health < 100) 
+        {
+            Health += healthRestore;
+            //call on the CharacterEvents script to bring the characterHealed script and pass it through the game Object
+            CharacterEvents.characterHealed(gameObject, healthRestore);
+        }
+    }
 }
