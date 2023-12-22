@@ -19,10 +19,9 @@ public class Attack : MonoBehaviour
         //checks if a gameobject is damageable/can be hit
         Damageable damageable = collision.GetComponent<Damageable>();
 
-        if (damageable) 
+        if (damageable != null) 
         {
             Vector2 deliveredKnockback = transform.parent.localScale.x > 0f ? knockback : new Vector2(-knockback.x, knockback.y);
-
             //Hit target
             bool gotHit = damageable.Hit(attackDamage, deliveredKnockback);
         }
