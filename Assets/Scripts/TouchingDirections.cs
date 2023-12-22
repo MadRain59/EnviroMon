@@ -32,6 +32,7 @@ public class TouchingDirections : MonoBehaviour
         }
     }
 
+    
     [SerializeField] private bool _isOnWall;
     public bool IsOnWall
     {
@@ -41,7 +42,7 @@ public class TouchingDirections : MonoBehaviour
         }
         private set
         {
-            _isOnWall = value;
+           _isOnWall = value;
             anim.SetBool("IsOnWall", value);
         }
     }
