@@ -109,7 +109,7 @@ public class Enemy : MonoBehaviour
             facingRight = !facingRight;
 
             // Reverse the scale in the X axis to change its orientation
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         }
     }
 
