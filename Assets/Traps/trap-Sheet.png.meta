@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -150,113 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6ea900ad3d6dbe4885071e44eb2e6f4
-      internalID: 1586121054
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: trap-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 0
-        width: 63
-        height: 83
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36ad056befb0f384fa2e75439b32948f
-      internalID: -1295034565
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: trap-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 126
-        y: 0
-        width: 63
-        height: 83
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77c5a5abb469b6d4f95a5a6e5d9f0353
-      internalID: -1242593146
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: trap-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 189
-        y: 0
-        width: 63
-        height: 83
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bc290f111052db84a983e4212d716612
-      internalID: -1347140050
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: trap-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 252
-        y: 0
-        width: 63
-        height: 83
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d301f89de5af8774ebdb63f2562d59d4
-      internalID: -1055922172
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: trap-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 315
-        y: 0
-        width: 63
-        height: 83
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 75c0a985baf33fb4c9487dbb26a4b634
-      internalID: 1079445326
+      spriteID: 3369a5f61eb228200800000000000000
+      internalID: 180755182284084787
       vertices: []
       indices: 
       edges: []
@@ -264,7 +159,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -272,12 +167,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      trap-Sheet_0: 1586121054
-      trap-Sheet_1: -1295034565
-      trap-Sheet_2: -1242593146
-      trap-Sheet_3: -1347140050
-      trap-Sheet_4: -1055922172
-      trap-Sheet_5: 1079445326
+      trap-Sheet_0: 180755182284084787
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
