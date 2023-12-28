@@ -103,7 +103,7 @@ public class Enemy : MonoBehaviour
     {
         bool attackCDCheck = anim.GetFloat("attackCooldown") == 0;
 
-        if ((directionX > 0 && !facingRight) || (directionX < 0 && facingRight) && attackCDCheck)
+        if (((directionX > 0 && !facingRight) || (directionX < 0 && facingRight) && attackCDCheck))
         {
             // Change the facing direction
             facingRight = !facingRight;
