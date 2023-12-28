@@ -101,7 +101,7 @@ public class Enemy : MonoBehaviour
 
     private void Flip(float directionX)
     {
-        bool attackCDCheck = anim.GetFloat("attackCooldown") == 0;
+        bool attackCDCheck = anim.GetFloat("attackCooldown") < 0.5f;
 
         if (((directionX > 0 && !facingRight) || (directionX < 0 && facingRight) && attackCDCheck))
         {
