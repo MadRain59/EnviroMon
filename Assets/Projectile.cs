@@ -27,7 +27,7 @@ public class Projectile : MonoBehaviour
 
         if (damageable != null ) 
         {
-            Vector2 deliveredKnockback = transform.parent.localScale.x > 0f ? knockback : new Vector2(-knockback.x, knockback.y);
+            Vector2 deliveredKnockback = transform.localScale.x > 0f ? knockback : new Vector2(-knockback.x, knockback.y);
             //Hit target
             bool gotHit = damageable.Hit(damage, deliveredKnockback);
 
