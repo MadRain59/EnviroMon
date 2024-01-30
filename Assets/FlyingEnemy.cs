@@ -7,9 +7,32 @@ public class FlyingEnemy : MonoBehaviour
     public float speed = 2f;
     private GameObject player;
     public bool chase = false;
+
+    Animator anim;
+    Rigidbody rb;
+    Damageable damageable;
+    public DetectionZone biteDetectionZone;
+
+    public bool _hasTarget = false;
+
+    public bool HasTarget
+    {
+        get
+        {
+            return _hasTarget;
+        }
+        private set
+        {
+            _hasTarget = value;
+            anim.SetBool("hasTarget", value);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        damageable = GetComponent<Damageable>();
+        anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -21,6 +44,9 @@ public class FlyingEnemy : MonoBehaviour
         if (chase == true)
             Chase();
         Flip();
+        Die();
+
+        HasTarget = biteDetectionZone.detectedColliders.Count > 0;
     }
 
     private void Chase()
@@ -35,5 +61,14 @@ public class FlyingEnemy : MonoBehaviour
 
         else
             transform.rotation = Quaternion.Euler(0, 180, 0);
+    }
+
+    private void Die()
+    {
+        if (damageable.IsAlive == false)
+        {
+            Destroy(gameObject);
+
+        }
     }
 }
