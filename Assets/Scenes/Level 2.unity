@@ -2539,6 +2539,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 854498239}
+    - target: {fileID: 4522409943505213968, guid: b53e7c56cb296384794aa47cb796c48e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522409943505213968, guid: b53e7c56cb296384794aa47cb796c48e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522409943505213968, guid: b53e7c56cb296384794aa47cb796c48e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.002491
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522409943505213968, guid: b53e7c56cb296384794aa47cb796c48e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000015259
+      objectReference: {fileID: 0}
     - target: {fileID: 6316405209842674955, guid: b53e7c56cb296384794aa47cb796c48e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2546,6 +2562,26 @@ PrefabInstance:
     - target: {fileID: 6316405209842674955, guid: b53e7c56cb296384794aa47cb796c48e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Lobby
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769569632493933387, guid: b53e7c56cb296384794aa47cb796c48e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 110.3246
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769569632493933387, guid: b53e7c56cb296384794aa47cb796c48e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 98.548
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769569632493933387, guid: b53e7c56cb296384794aa47cb796c48e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769569632493933387, guid: b53e7c56cb296384794aa47cb796c48e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664945659190374294, guid: b53e7c56cb296384794aa47cb796c48e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
