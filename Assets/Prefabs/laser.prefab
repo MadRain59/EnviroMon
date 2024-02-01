@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234a633342bfe9e4aa38f6a297ef3b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileMoveSpeed: {x: 500, y: 0}
+  projectileMoveSpeed: {x: 50, y: 0}
   damage: 35
   knockback: {x: 0, y: 0}
 --- !u!50 &6405993750732648605

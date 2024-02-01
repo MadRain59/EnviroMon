@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaypointFollower : MonoBehaviour
@@ -8,17 +7,35 @@ public class WaypointFollower : MonoBehaviour
     private int currentWaypointIndex = 0;
 
     [SerializeField] private float speed = 2f;
+    [SerializeField] private float pauseDuration = 1f;
+
+    private bool isPaused = false;
 
     private void Update()
     {
-        if (Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position) < .1f)
+        if (!isPaused)
         {
-            currentWaypointIndex++;
-            if (currentWaypointIndex >= waypoints.Length)
+            float distanceToWaypoint = Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position);
+
+            if (distanceToWaypoint < 0.1f)
             {
-                currentWaypointIndex = 0;
+                StartCoroutine(PauseForDuration());
+                currentWaypointIndex++;
+
+                if (currentWaypointIndex >= waypoints.Length)
+                {
+                    currentWaypointIndex = 0;
+                }
             }
+
+            transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, Time.deltaTime * speed);
         }
-        transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, Time.deltaTime * speed);
+    }
+
+    private IEnumerator PauseForDuration()
+    {
+        isPaused = true;
+        yield return new WaitForSeconds(pauseDuration);
+        isPaused = false;
     }
 }

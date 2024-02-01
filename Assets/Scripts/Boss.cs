@@ -9,9 +9,12 @@ public class Enemy : MonoBehaviour
     public float moveSpeed = 5f; // Adjust the speed at which the enemy moves
     private Transform player; // Reference to the player's Transform
     private bool facingRight = true; // Flag to track the enemy's facing direction
+    public bool HasTargetInColl = false;
+    public bool chase = false;
 
     public DetectionZone attackZone;
     public DetectionZone cliffDetectionZone;
+    public 
 
     Rigidbody2D rb;
     TouchingDirections touchingDirections;
@@ -70,6 +73,7 @@ public class Enemy : MonoBehaviour
         if (player == null)
         {
             Debug.LogError("Player not found!");
+            return;
         }
     }
 
@@ -83,8 +87,8 @@ public class Enemy : MonoBehaviour
             AttackCD -= Time.deltaTime;
         }
 
-        if (player != null)
-        {
+        if (player != null && chase == true)
+        {   
             // Get the direction from the enemy to the player
             Vector3 direction = player.position - transform.position;
 
