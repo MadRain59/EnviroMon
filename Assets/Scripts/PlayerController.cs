@@ -209,8 +209,34 @@ public class PlayerController : MonoBehaviour
         if(context.started)
         {
             anim.SetTrigger("attack");
+
+            StartCoroutine(MoveForwardDuringAttack());
         }
     }
+    private IEnumerator MoveForwardDuringAttack()
+    {
+        // Distance to move forward during the attack animation
+        float attackMoveDistance = 1.1f; // Adjust this value based on your needs
+
+        // Cache the original position
+        Vector2 originalPosition = transform.position;
+
+        // Calculate the target position
+        Vector2 targetPosition = originalPosition + new Vector2((IsFacingRight ? 1 : -1) * attackMoveDistance, 0f);
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < 0.1f) // Adjust the duration based on your attack animation length
+        {
+            // Interpolate between the original and target positions
+            transform.position = Vector2.Lerp(originalPosition, targetPosition, elapsedTime / 0.5f);
+
+            elapsedTime += Time.deltaTime;
+
+            yield return null;
+        }
+    }
+
 
     public void OnRangedAttack(InputAction.CallbackContext context)
     {
