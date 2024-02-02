@@ -94,6 +94,24 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-4537691236756255095
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 487714fd6b0d2eb4394a6d449d23aa5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundFX: {fileID: 8300000, guid: 8fdb68862dfba3440a74d97fc7c8c1bc, type: 3}
+  volume: 1
+  playOnEnter: 1
+  playOnExit: 0
+  playAfterDelay: 0
+  playDelay: 0.25
 --- !u!114 &-4508093099255316128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,6 +203,7 @@ AnimatorStateMachine:
   m_StateMachineBehaviours:
   - {fileID: 2818534484470278539}
   - {fileID: 4444913404975631733}
+  - {fileID: -4537691236756255095}
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 110, z: 0}
