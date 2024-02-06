@@ -696,7 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 487714fd6b0d2eb4394a6d449d23aa5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundFX: {fileID: 8300000, guid: e77f4ed065a9d74428ad3b8b65304d0e, type: 3}
+  soundFX: {fileID: 8300000, guid: 6963c2ac032a3ee449e9d9a5b6d9c1b6, type: 3}
   volume: 1
   playOnEnter: 1
   playOnExit: 0
@@ -1439,12 +1439,6 @@ AnimatorStateMachine:
   - {fileID: -1290779474696938313}
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: 7360041900677710985}
-    second:
-    - {fileID: -284401080548005778}
-    - {fileID: 1328532861538440982}
-    - {fileID: -202091579685592815}
-    - {fileID: -653995960540910715}
   - first: {fileID: 2145756915002718526}
     second:
     - {fileID: -8807592171102107469}
@@ -1452,6 +1446,12 @@ AnimatorStateMachine:
   - first: {fileID: 4616589506817878563}
     second:
     - {fileID: -1984960607597362925}
+  - first: {fileID: 7360041900677710985}
+    second:
+    - {fileID: -284401080548005778}
+    - {fileID: 1328532861538440982}
+    - {fileID: -202091579685592815}
+    - {fileID: -653995960540910715}
   - first: {fileID: 8236636142297868321}
     second:
     - {fileID: 8179789543141229100}
@@ -1560,10 +1560,10 @@ AnimatorStateMachine:
     m_Position: {x: 280, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3009978592053820154}
-    m_Position: {x: 280, y: 40, z: 0}
+    m_Position: {x: 280, y: 30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3530891201245339154}
-    m_Position: {x: 280, y: -20, z: 0}
+    m_Position: {x: 280, y: -50, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
