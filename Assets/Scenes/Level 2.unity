@@ -3604,7 +3604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1731953714855876754, guid: 5b12e5ec3b7e3a8449c5c4e52eb7dad7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -39.69
+      value: -47.47
       objectReference: {fileID: 0}
     - target: {fileID: 1731953714855876754, guid: 5b12e5ec3b7e3a8449c5c4e52eb7dad7, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3622,9 +3622,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2269869661570320368, guid: 5b12e5ec3b7e3a8449c5c4e52eb7dad7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269869661570320368, guid: 5b12e5ec3b7e3a8449c5c4e52eb7dad7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 3646193313433799251, guid: 5b12e5ec3b7e3a8449c5c4e52eb7dad7, type: 3}
       propertyPath: m_Name
       value: Phase2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3646193313433799251, guid: 5b12e5ec3b7e3a8449c5c4e52eb7dad7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4839548954587928802, guid: 5b12e5ec3b7e3a8449c5c4e52eb7dad7, type: 3}
       propertyPath: m_Controller
@@ -22960,7 +22972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8213823550233603720, guid: 628220d1ea35ae4418a1eb12f8ca9c23, type: 3}
       propertyPath: attackDamage
-      value: 34
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
