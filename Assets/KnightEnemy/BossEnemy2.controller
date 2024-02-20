@@ -220,7 +220,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BossEnemy
+  m_Name: BossEnemy2
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: IsOnWall
@@ -402,12 +402,12 @@ AnimatorStateMachine:
   - {fileID: -2777128505847611748}
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: 303037679524251426}
-    second:
-    - {fileID: 361906295624555158}
   - first: {fileID: -3730911588613184101}
     second:
     - {fileID: -2652587154011514672}
+  - first: {fileID: 303037679524251426}
+    second:
+    - {fileID: 361906295624555158}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 560, y: 180, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
