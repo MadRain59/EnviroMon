@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
 
     public DetectionZone attackZone;
     public DetectionZone cliffDetectionZone;
-    public 
+    
 
     Rigidbody2D rb;
     TouchingDirections touchingDirections;
@@ -101,6 +101,7 @@ public class Enemy : MonoBehaviour
             // Flip the enemy if necessary
             Flip(direction.x);
         }
+
     }
 
     private void Flip(float directionX)
@@ -122,4 +123,5 @@ public class Enemy : MonoBehaviour
     {
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
     }
+
 }
