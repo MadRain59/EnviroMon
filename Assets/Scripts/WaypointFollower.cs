@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class WaypointFollower : MonoBehaviour
 {
-    [SerializeField] private GameObject[] waypoints;
-    private int currentWaypointIndex = 0;
+    public GameObject[] waypoints;
+    public int currentWaypointIndex = 0;
 
-    [SerializeField] private float speed = 2f;
-    [SerializeField] private float pauseDuration = 1f;
+    public float speed = 2f;
+    
+    public float pauseDuration = 1f;
 
     private bool isPaused = false;
 

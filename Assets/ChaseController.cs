@@ -12,10 +12,24 @@ public class ChaseController : MonoBehaviour
             if (collision.CompareTag("Player"))
         {
             foreach (FlyingEnemy enemy in enemyArray) 
+          
+            if (IsAttacking(enemy))
             {
-                enemy.chase = true;
-                Debug.Log("Chasing");
+                enemy.chase = false;
             }
         }
+    }
+
+    private bool IsAttacking(FlyingEnemy enemy)
+    {
+        Animator animator = enemy.GetComponent<Animator>();
+        
+        if (animator != null) 
+        {
+            bool isInAttackAnimation = animator.GetCurrentAnimatorStateInfo(0).IsName("Attack");
+            return isInAttackAnimation;
+        }
+
+        return false;
     }
 }

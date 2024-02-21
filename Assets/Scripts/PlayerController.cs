@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
     public float jumpImpulse = 10f;
     Damageable damageable;
 
+    [SerializeField] private float dashSpeed = 50f; // Adjust this value based on your needs
+    private bool isDashing = false;
+
     //calls Vector2
     Vector2 moveInput;
 
@@ -107,7 +110,7 @@ public class PlayerController : MonoBehaviour
         private set
         {
             //checks if isFacingRight is not true then flips the localscale
-            if(_isFacingRight != value)
+            if (_isFacingRight != value)
             {
                 transform.localScale *= new Vector2(-1, 1);
             }
@@ -116,7 +119,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     //gets reference for CanMove from the animator
-    public bool CanMove 
+    public bool CanMove
     {
         get
         {
@@ -124,12 +127,12 @@ public class PlayerController : MonoBehaviour
         }
     }
     //gets reference for IsAlive from the animator
-    public bool IsAlive 
-    { 
+    public bool IsAlive
+    {
         get
         {
             return anim.GetBool("IsAlive");
-        } 
+        }
     }
 
     // Start is called before the first frame update
@@ -142,10 +145,10 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(!damageable.IsHit)
-        //tells rb the x and y position of the character, x is multiplied by the walk speed
-        //y whill most likely be multiplied by the jumforce
-        rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
+        if (!damageable.IsHit)
+            //tells rb the x and y position of the character, x is multiplied by the walk speed
+            //y whill most likely be multiplied by the jumforce
+            rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
 
         anim.SetFloat("yVelocity", rb.velocity.y);
     }
@@ -156,8 +159,8 @@ public class PlayerController : MonoBehaviour
         moveInput = context.ReadValue<Vector2>();
 
         //checks if player IsAlive first before deciding whether or not player can move
-        if(IsAlive)
-        { 
+        if (IsAlive)
+        {
             //decides whether IsMoving is true or false
             IsMoving = moveInput != Vector2.zero;
 
@@ -206,7 +209,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if(context.started)
+        if (context.started)
         {
             anim.SetTrigger("attack");
 
@@ -249,5 +252,49 @@ public class PlayerController : MonoBehaviour
     public void OnHit(int damage, Vector2 knockback)
     {
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
+    }
+
+    public void OnDash(InputAction.CallbackContext context)
+    {
+        if (context.started && IsAlive)
+        {
+            StartCoroutine(Dash());
+        }
+    }
+    private IEnumerator Dash()
+    {
+        if (!isDashing)
+        {
+            isDashing = true;
+
+            // Cache the original position
+            Vector2 originalPosition = transform.position;
+
+            // Calculate the target position
+            Vector2 targetPosition = originalPosition + new Vector2((IsFacingRight ? 1 : -1) * dashSpeed, 0f);
+
+            float elapsedTime = 0f;
+
+            while (elapsedTime < 0.15f) // Adjust the duration based on your dash animation length
+            {
+                // Use Physics2D.Raycast to check for collisions in the dash path
+                RaycastHit2D hit = Physics2D.Raycast(originalPosition, (targetPosition - originalPosition).normalized, dashSpeed * elapsedTime, LayerMask.GetMask("Ground"));
+
+                // If hit, stop the dash
+                if (hit.collider != null)
+                {
+                    break;
+                }
+
+                // Interpolate between the original and target positions
+                transform.position = Vector2.Lerp(originalPosition, targetPosition, elapsedTime / 0.5f);
+
+                elapsedTime += Time.deltaTime;
+
+                yield return null;
+            }
+
+            isDashing = false;
+        }
     }
 }

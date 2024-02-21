@@ -404,6 +404,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107380585}
   m_CullTransparentMesh: 1
+--- !u!114 &128007257 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2864301890115623465, guid: 7021bde258cb31a43a60406eb2442946, type: 3}
+  m_PrefabInstance: {fileID: 8519219499778604360}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &351466547
 GameObject:
   m_ObjectHideFlags: 0
@@ -2842,6 +2853,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0270b3d4-b39b-40c2-9e2e-7b8fa14d7862
     m_ActionName: Player/RangedAttack[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c5544d21-07ad-4c61-979c-53efee35a327
+    m_ActionName: Player/Dash[/Keyboard/leftCtrl]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -2863,6 +2878,7 @@ MonoBehaviour:
   airWalkSpeed: 5
   runSpeed: 15
   jumpImpulse: 15
+  dashSpeed: 50
   _isMoving: 0
   _isRunning: 0
   _isFacingRight: 1
@@ -4781,6 +4797,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2547235456350996298, guid: 7021bde258cb31a43a60406eb2442946, type: 3}
+      propertyPath: coins
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2547235456350996298, guid: 7021bde258cb31a43a60406eb2442946, type: 3}
+      propertyPath: coinsAmount
+      value: 
+      objectReference: {fileID: 128007257}
     - target: {fileID: 4121894438242458329, guid: 7021bde258cb31a43a60406eb2442946, type: 3}
       propertyPath: m_Name
       value: CharacterCanvasUI

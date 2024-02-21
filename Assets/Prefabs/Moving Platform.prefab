@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2846300729707474981}
   - component: {fileID: 2319142310236754685}
+  - component: {fileID: 1172054770103246768}
+  - component: {fileID: 1979663918514483843}
   - component: {fileID: 8512318774103864618}
   - component: {fileID: 5470732324150044633}
   m_Layer: 6
@@ -86,6 +88,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1172054770103246768
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3526271301410351750}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06336784, y: 0.6325418}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 21.875, y: 9.375}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 18.870674, y: 2.2650838}
+  m_EdgeRadius: 0
+--- !u!114 &1979663918514483843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3526271301410351750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab9d92c8cc9c04b429c732c5d83f645f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8512318774103864618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,6 +160,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
+  currentWaypointIndex: 0
   speed: 5
 --- !u!95 &5470732324150044633
 Animator:

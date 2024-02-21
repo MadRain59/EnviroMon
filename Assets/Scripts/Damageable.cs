@@ -8,6 +8,8 @@ public class Damageable : MonoBehaviour
 {
     public UnityEvent<int, Vector2> damageableHit;
     public UnityEvent<int, int> healthChanged;
+    public GameObject coinsCounterer;
+    CoinsCounter coinsCounter;
 
     Animator anim;
     
@@ -40,6 +42,8 @@ public class Damageable : MonoBehaviour
             if(_health <= 0)
             {
                 IsAlive = false;
+                coinsCounter.coins += 1;
+                Debug.Log("CoinsAdded");
             }
         }
     }
@@ -81,6 +85,8 @@ public class Damageable : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        coinsCounter = coinsCounterer.GetComponent<CoinsCounter>();
+
     }
 
     private void Update()
