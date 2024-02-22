@@ -20,7 +20,7 @@ public class BossDeadTrigger : MonoBehaviour
     {
         if (damageable.Health <= 0)
         {
-            Invoke("LoadNextScene", 5f);
+            Invoke("LoadNextScene", 2f);
         }
     }
     void LoadNextScene()

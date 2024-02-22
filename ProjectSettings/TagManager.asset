@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Teleporter
+  - Boss
+  - Phase2
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - EnemyHitBox
   - GroundDetection
   - Pickup
-  - 
+  - Boss
   - 
   - 
   - 

@@ -25,6 +25,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(levelIndex);
     }
 
+    public void LoadCreditScene()
+    {
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 5));
+    }
+
     public void QuitGame()
     {
         Debug.Log("Quit");
