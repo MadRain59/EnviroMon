@@ -18,9 +18,14 @@ public class BossDeadTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(damageable.Health <= 0)
+        if (damageable.Health <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+            Invoke("LoadNextScene", 5f);
         }
+    }
+    void LoadNextScene()
+    {
+        // Load the next scene after the delay
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
 }

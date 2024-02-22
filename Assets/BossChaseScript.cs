@@ -5,7 +5,6 @@ using UnityEngine;
 public class BossChaseScript : MonoBehaviour
 {
     public Enemy[] enemyArray;
-    // Start is called before the first frame update
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,10 +12,31 @@ public class BossChaseScript : MonoBehaviour
         {
             foreach (Enemy enemy in enemyArray)
             {
-                enemy.chase = true;
-                Debug.Log("Chasing");
+                if (!IsAttacking(enemy))
+                {
+                    enemy.chase = true;
+                    Debug.Log("Chasing");
+                }
+                else
+                {
+                    enemy.chase = false;
+                    Debug.Log("Stopping chase during Attack sub-state");
+                }
             }
         }
     }
-}
 
+    private bool IsAttacking(Enemy enemy)
+    {
+        Animator animator = enemy.GetComponent<Animator>();
+
+        if (animator != null)
+        {
+            AnimatorStateInfo currentState = animator.GetCurrentAnimatorStateInfo(0);
+            bool isInAttackAnimation = currentState.IsName("Boss_Attack") && currentState.IsTag("Attack");
+            return isInAttackAnimation;
+        }
+
+        return false;
+    }
+}

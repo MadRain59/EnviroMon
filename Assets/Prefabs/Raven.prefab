@@ -157,6 +157,7 @@ MonoBehaviour:
   healthChanged:
     m_PersistentCalls:
       m_Calls: []
+  coinsCounterer: {fileID: 5041566791936685588, guid: e9600f5f9c47fa9419c36efb1f89b215, type: 3}
   _maxHealth: 35
   _health: 35
   _isAlive: 1
