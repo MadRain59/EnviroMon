@@ -80,5 +80,18 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
+
+    public void MainMenu()
+    {
+        LoadLevelMainMenu("StartMenu");
+    }
+
+    public void LoadLevelMainMenu(string mainMenu)
+    {
+        // Ensure the time scale is set back to 1 before loading the new scene
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(mainMenu);
+    }
+ 
 }
 
