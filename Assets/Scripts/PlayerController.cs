@@ -254,47 +254,47 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
     }
 
-    public void OnDash(InputAction.CallbackContext context)
-    {
-        if (context.started && IsAlive)
-        {
-            StartCoroutine(Dash());
-        }
-    }
-    private IEnumerator Dash()
-    {
-        if (!isDashing)
-        {
-            isDashing = true;
+    //public void OnDash(InputAction.CallbackContext context)
+    //{
+        //if (context.started && IsAlive)
+       // {
+           // StartCoroutine(Dash());
+       // }
+   // }
+   // private IEnumerator Dash()
+   // {
+   //     if (!isDashing)
+   //     {
+   //         isDashing = true;
 
             // Cache the original position
-            Vector2 originalPosition = transform.position;
+            //Vector2 originalPosition = transform.position;
 
             // Calculate the target position
-            Vector2 targetPosition = originalPosition + new Vector2((IsFacingRight ? 1 : -1) * dashSpeed, 0f);
+           // Vector2 targetPosition = originalPosition + new Vector2((IsFacingRight ? 1 : -1) * dashSpeed, 0f);
 
-            float elapsedTime = 0f;
+            //float elapsedTime = 0f;
 
-            while (elapsedTime < 0.15f) // Adjust the duration based on your dash animation length
-            {
+            //while (elapsedTime < 0.15f) // Adjust the duration based on your dash animation length
+            //{
                 // Use Physics2D.Raycast to check for collisions in the dash path
-                RaycastHit2D hit = Physics2D.Raycast(originalPosition, (targetPosition - originalPosition).normalized, dashSpeed * elapsedTime, LayerMask.GetMask("Ground"));
+                //RaycastHit2D hit = Physics2D.Raycast(originalPosition, (targetPosition - originalPosition).normalized, dashSpeed * elapsedTime, LayerMask.GetMask("Ground"));
 
                 // If hit, stop the dash
-                if (hit.collider != null)
-                {
-                    break;
-                }
+                //if (hit.collider != null)
+                //{
+                   // break;
+                //}
 
                 // Interpolate between the original and target positions
-                transform.position = Vector2.Lerp(originalPosition, targetPosition, elapsedTime / 0.5f);
+               // transform.position = Vector2.Lerp(originalPosition, targetPosition, elapsedTime / 0 .5f);
 
-                elapsedTime += Time.deltaTime;
+                //elapsedTime += Time.deltaTime;
 
-                yield return null;
-            }
+               // yield return null;
+           // }
 
-            isDashing = false;
-        }
-    }
+            //isDashing = false;
+        //}
+    //}
 }
